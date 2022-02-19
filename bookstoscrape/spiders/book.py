@@ -39,7 +39,8 @@ class BookSpider(CrawlSpider):
             book_loader.add_value('image_url', response.urljoin(item.xpath(
                 '//div[@class="image_container"]/a/img/@src').get()))
 
-            book_loader.add_value('details_page_url', response.urljoin(item.xpath(
-                '//div[@class="image_container"]/a/@href').get()))
+            book_loader.add_value('details_page_url', response.urljoin(
+                item.xpath(
+                    '//div[@class="image_container"]/a/@href').get()))
 
             yield book_loader.load_item()
