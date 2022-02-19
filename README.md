@@ -13,3 +13,10 @@ I'm interested in getting these fields:
 About the Spider: 
 - It's not a generic spider, it was created using a CrawlSpider template.
 - The spider follows two simple rules. The first one is related to the categories. The spider should enter in all categories pages and extract book data from them. The second one is related to the pagination of categories pages. Even if there is more than one page in the specific category the spider should enter in all of them.
+
+Another considerations:
+- There is a custom pipeline to clean the data (could have used an output_processor in the Item field instead);
+- The Json is exported in utf-8 enconding;
+
+
+

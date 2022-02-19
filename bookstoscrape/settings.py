@@ -1,12 +1,3 @@
-# Scrapy settings for bookstoscrape project
-#
-# For simplicity, this file contains only settings considered important or
-# commonly used. You can find more settings consulting the documentation:
-#
-#     https://docs.scrapy.org/en/latest/topics/settings.html
-#     https://docs.scrapy.org/en/latest/topics/downloader-middleware.html
-#     https://docs.scrapy.org/en/latest/topics/spider-middleware.html
-
 BOT_NAME = 'bookstoscrape'
 SPIDER_MODULES = ['bookstoscrape.spiders']
 NEWSPIDER_MODULE = 'bookstoscrape.spiders'
@@ -15,7 +6,10 @@ NEWSPIDER_MODULE = 'bookstoscrape.spiders'
 # (and your website) on the user-agent
 # USER_AGENT = 'bookstoscrape (+http://www.yourdomain.com)'
 # Obey robots.txt rules
+
 ROBOTSTXT_OBEY = True
+FEED_EXPORT_ENCODING = 'utf-8'
+
 # Configure maximum concurrent requests performed by Scrapy (default: 16)
 # CONCURRENT_REQUESTS = 32
 # Configure a delay for requests for the same website (default: 0)
@@ -57,8 +51,6 @@ ROBOTSTXT_OBEY = True
 #    'scrapy.extensions.telnet.TelnetConsole': None,
 # }
 
-# Configure item pipelines
-# See https://docs.scrapy.org/en/latest/topics/item-pipeline.html
 ITEM_PIPELINES = {
     'bookstoscrape.pipelines.BookstoscrapePipeline': 300,
 }
