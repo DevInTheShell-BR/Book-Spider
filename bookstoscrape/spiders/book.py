@@ -24,7 +24,13 @@ class BookSpider(CrawlSpider):
     )
 
     def parse_item(self, response):
+        """ This function parses books from categories pages
 
+        @url http://books.toscrape.com
+        @returns items 1 20
+        @scrapes title price
+        @scrapes image_url details_page_url
+        """
         for item in response.xpath('//article/h3/a'):
             book_loader = ItemLoader(
                 item=BookItem(),
