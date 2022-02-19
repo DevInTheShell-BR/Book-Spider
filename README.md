@@ -17,6 +17,6 @@ About the Spider:
 Another considerations:
 - There is a custom pipeline to clean the data (could have used an output_processor in the Item field instead);
 - The Json is exported in utf-8 enconding;
-
+- There is a simple Contract (a way to test spiders) in the parse_item method of the spider; 
 
 
