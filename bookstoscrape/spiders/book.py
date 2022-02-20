@@ -31,22 +31,22 @@ class BookSpider(CrawlSpider):
         @scrapes title price
         @scrapes image_url details_page_url
         """
-        for item in response.xpath('//article/h3/a'):
+        for item in response.xpath('//article'):
             book_loader = ItemLoader(
                 item=BookItem(),
                 response=response,
             )
-            book_loader.add_value('title', item.xpath('./@title').get())
+            book_loader.add_value('title', item.xpath('./h3/a/@title').get())
 
             book_loader.add_value('price', item.xpath(
-                '//p[@class="price_color"]/text()').get(),
+                './div/p[@class="price_color"]/text()').get(),
                 MapCompose(lambda i: i.replace(',', ''), float), re='[,.0-9]+')
 
             book_loader.add_value('image_url', response.urljoin(item.xpath(
-                '//div[@class="image_container"]/a/img/@src').get()))
+                './div[@class="image_container"]/a/img/@src').get()))
 
             book_loader.add_value('details_page_url', response.urljoin(
                 item.xpath(
-                    '//div[@class="image_container"]/a/@href').get()))
+                    './div[@class="image_container"]/a/@href').get()))
 
             yield book_loader.load_item()
