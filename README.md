@@ -29,5 +29,6 @@ Another considerations:
 </br>
 </br>
 
-**Made with :heart:  &  :coffee: by me.**
-
+<center><b>
+Made with ❤️ by me.
+</b></center>

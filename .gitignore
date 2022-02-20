@@ -1,4 +1,9 @@
 booksscraped.json
+result.csv
+result.json
+result.xml
+
+
 
 __pycache__/
 .scrapy
