@@ -29,6 +29,6 @@ Another considerations:
 </br>
 </br>
 
-<p align="center">><b>
+<p align="center"><b>
 Made with ❤️ by me.
 </b></p>
